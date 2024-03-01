@@ -13,7 +13,7 @@
             padding: 0;
         }
         .nav-container{
-       width: 4vw;
+       max-width: 4vw;
         height: 100vh;
         background-color: #fc0b03;
         display: flex;
@@ -51,13 +51,20 @@
         margin-top: 0.1rem;
     }
     .active{
-        width: 10vw;
+       max-width: 8vw;
     }
-    /* @media only screen and (max-width: 600px) {
-        #nav-container{
-       width: 20vw;
+    @media only screen  and (max-width: 941px)  {
+        .active{
+       width: 12vw;
   }
-} */
+}
+    @media only screen  and (min-width: 300px)  {
+        .active{
+       width: 12vw;
+  }
+}
+   
+
 
     </style>
 </head>
@@ -75,11 +82,23 @@
      const humbergerbtn = document.querySelector("#humberger");
      const navContainer = document.getElementsByClassName('nav-container')
      const items = document.querySelectorAll('.items')
-     humbergerbtn.addEventListener('click',()=>{
-        navContainer[0].classList.add('active')
-       items.forEach(ele=>{
-        ele.classList.add('iactive')
-       })
+     humbergerbtn.addEventListener('click',(e)=>{
+        if(e.target.classList.contains('fa-bars')){
+            e.target.classList.remove('fa-bars');
+            e.target.classList.add('fa-xmark');
+            navContainer[0].classList.add('active')
+           items.forEach(ele=>{
+            ele.classList.add('iactive')
+           })
+        }
+        else{
+            e.target.classList.add('fa-bars');
+            e.target.classList.remove('fa-xmark');
+            navContainer[0].classList.remove('active')
+           items.forEach(ele=>{
+            ele.classList.remove('iactive')
+           })
+        }
      })
    </script>
 </body>
