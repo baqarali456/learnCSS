@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>basics of css</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #nav-container{
+        width: 100vw;
+        min-height: 10vh;
+        background-color: #fc0b03;
+        display: flex;
+    }
+    #item-container{
+        display: flex;
+        align-items: center;
+        
+    }
+    #item-container > li{
+      list-style: none;
+      padding: 0.6rem 1rem;
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      color: #1d4083;
+      cursor: pointer;
+    }
+  
+    @media only screen and (max-width: 250px) {
+        #item-container {
+   flex-direction: column;
+   justify-content: center;
+   margin: auto;
+  }
+}
+
+    
+</style>
+<body>
+   <nav id="nav-container">
+    <ul id="item-container">
+        <li  class="items">Home</li>
+        <li class="items">About</li>
+        <li class="items">Contact</li>
+    </ul>
+   </nav>
+</body>
+</html>
